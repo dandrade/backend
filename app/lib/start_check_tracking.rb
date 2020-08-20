@@ -30,6 +30,9 @@ class StartCheckTracking
 
   def check_status_of_(data, clazz:clazz)
     # Aqui tenemos que enviar a sidekiq
-
+    Sidekiq::Client.push_bulk(
+      'class' => CheckTrackingStatusWorker,
+      'args' => [[data]]
+    )
   end
 end
