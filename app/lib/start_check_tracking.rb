@@ -23,12 +23,11 @@ class StartCheckTracking
 
   CARRIERS.each do |carrier|
     define_method "check_#{carrier}" do
-      clazz = carrier.camelize
-      check_status_of_(@data, clazz: clazz)
+      check_status_of_(@data)
     end
   end
 
-  def check_status_of_(data, clazz:clazz)
+  def check_status_of_(data)
     # Aqui tenemos que enviar a sidekiq
     Sidekiq::Client.push_bulk(
       'class' => CheckTrackingStatusWorker,
