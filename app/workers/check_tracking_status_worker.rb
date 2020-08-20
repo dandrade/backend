@@ -8,5 +8,6 @@ class CheckTrackingStatusWorker
     # Check status nos va a dar el dinamismo
     # de implementar cada carrier en su propia clase
     CheckStatus.new(args, carrier).call
+    GC.start # recogemos la basura
   end
 end
