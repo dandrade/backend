@@ -5,4 +5,5 @@ Rails.application.routes.draw do
       post '/tracking' => "tracking#track", as: "tracking"
     end
   end
+  mount ActionCable.server => '/cable'
 end

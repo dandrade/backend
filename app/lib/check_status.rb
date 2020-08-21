@@ -11,6 +11,12 @@ class CheckStatus
 
   def call
     message = "#{@clazz}Provider".constantize.new(@args).call
+    if message.success?
+      ActionCable.server.broadcast("trackings", details: message.payload)
+    else
+      ActionCable.server.broadcast("trackings", details: message.error)
+    end
+
   end
 
 end
