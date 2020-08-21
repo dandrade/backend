@@ -34,6 +34,8 @@ Esta prueba tecnica fue desarrollada de la siguiente manera:
     
 ```
 
+**Pantallas del frontend https://github.com/dandrade/front_end**
+
 ![alt text](https://raw.githubusercontent.com/dandrade/backend/master/screen1.png)
 ![alt text](https://raw.githubusercontent.com/dandrade/backend/master/screen2.png)
 
